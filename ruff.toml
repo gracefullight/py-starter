@@ -1,0 +1,41 @@
+# Ruff 기본 설정
+line-length = 100
+target-version = "py313"
+
+# 제외할 디렉토리
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    "venv",
+    ".venv",
+]
+
+[lint]
+fixable = ["ALL"]
+select = ["ALL"]
+
+# 무시할 규칙
+ignore = [
+    # Missing docstring
+    "D100",    # Missing docstring in public module
+    "D101",    # Missing docstring in public class
+    "D102",    # Missing docstring in public method
+    "D103",    # Missing docstring in public function
+    "D104",    # Missing docstring in public package
+    "D107",    # Missing docstring in __init__
+
+    # 충돌하는 규칙 무시
+    "D203",    # one-blank-line-before-class
+    "D213",    # multi-line-summary-second-line
+]
+
+[lint.isort]
+known-first-party = ["src"]
+
+[format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+docstring-code-format = true

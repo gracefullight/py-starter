@@ -13,3 +13,9 @@ start = "src.main:main"
 
 [tool.setuptools]
 packages = ["src"]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.15.0",
+    "ruff>=0.11.8",
+]
