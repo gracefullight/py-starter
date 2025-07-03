@@ -1,0 +1,13 @@
+{
+  "language": "en",
+  "words": [
+    "isort",
+    "mypy",
+    "pycache",
+    "pytest",
+    "pythonpath",
+    "scikit",
+    "setuptools",
+    "venv"
+  ]
+}

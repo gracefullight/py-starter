@@ -39,3 +39,6 @@ quote-style = "double"
 indent-style = "space"
 line-ending = "auto"
 docstring-code-format = true
+
+[lint.per-file-ignores]
+"tests/*" = ["S101"]
