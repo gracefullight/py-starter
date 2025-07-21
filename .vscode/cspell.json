@@ -3,6 +3,7 @@
   "words": [
     "isort",
     "mypy",
+    "poethepoet",
     "pycache",
     "pytest",
     "pythonpath",

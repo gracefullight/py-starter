@@ -4,15 +4,7 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = [
-    "scikit-learn>=1.7.0",
-]
-
-[project.scripts]
-start = "src.main:main"
-
-[tool.setuptools]
-packages = ["src"]
+dependencies = ["scikit-learn>=1.7.0"]
 
 [dependency-groups]
 dev = [
@@ -21,7 +13,18 @@ dev = [
     "ruff>=0.12.2",
     "pytest>=8.4.1",
     "pytest-cov>=6.2.1",
+    "poethepoet>=0.36.0",
 ]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
+
+[tool.poe.tasks]
+run = "python src/main.py"
+test = "pytest tests"
+test-cov = "pytest tests --cov=src"
+lint = "ruff check src/ tests/"
+format = "ruff format src/ tests/"
+type-check = "mypy src/"
+pre-commit = "pre-commit run --all-files"
+all-checks = ["lint", "format", "type-check", "test"]

@@ -1,7 +1,9 @@
 {
   "recommendations": [
-    "ms-python.black-formatter",
+    "ms-python.python",
     "charliermarsh.ruff",
-    "ms-python.mypy-type-checker"
+    "ms-python.mypy-type-checker",
+    "ms-python.pylint",
+    "ms-toolsai.jupyter"
   ]
 }
