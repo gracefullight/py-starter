@@ -2,12 +2,16 @@
   "language": "en",
   "words": [
     "isort",
+    "matplotlib",
     "mypy",
+    "numpy",
+    "openml",
     "poethepoet",
     "pycache",
     "pytest",
     "pythonpath",
     "scikit",
+    "seaborn",
     "setuptools",
     "venv"
   ]
