@@ -1,6 +1,6 @@
 def main() -> None:
-    """애플리케이션의 메인 진입점 함수입니다."""
-    # T20 규칙(print 금지)을 무시합니다
+    """Serve as the main entry point for the application."""
+    # Ignore T20 rule (print statement prohibition)
     print("Hello from starter!")  # noqa: T201
 
 
