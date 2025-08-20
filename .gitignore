@@ -12,3 +12,9 @@ wheels/
 .venv
 .coverage
 .pytest_cache
+
+# Vibe
+.serena
+
+# OS
+.DS_Store
