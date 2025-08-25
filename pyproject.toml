@@ -25,7 +25,7 @@ dev = [
 ]
 
 [tool.pytest.ini_options]
-pythonpath = ["."]
+pythonpath = ["src"]
 
 [tool.poe.tasks]
 run = "python src/main.py"

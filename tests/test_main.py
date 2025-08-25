@@ -3,7 +3,7 @@ from io import StringIO
 
 import pytest
 
-from src.main import main
+from main import main
 
 
 def test_main_prints_hello(monkeypatch: pytest.MonkeyPatch) -> None:

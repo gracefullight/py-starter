@@ -28,7 +28,7 @@ I chose `uv` to fundamentally address the complexity of traditional Python envir
 3. **Run your project**
    Execute the main application entrypoint to verify your setup is working correctly.
    ```sh
-   uv run src/main.py
+   uv run python src/main.py
    # or using the alias
    uv run poe run
    ```
