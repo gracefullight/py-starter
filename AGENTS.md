@@ -2,40 +2,39 @@
 
 ## Project Structure & Module Organization
 - `src/`: Application code. Entry point: `src/main.py` exposing `main()`.
-- `tests/`: Pytest suite (e.g., `tests/test_main.py`).
-- Config: `pyproject.toml` (tasks via `poethepoet`), `ruff.toml` (lint/format), `mypy.ini` (type checking), `.pre-commit-config.yaml` (hooks), `uv.lock` (locked deps).
+- Modules live under `src/<module>/` (e.g., `src/demo/`, `src/week1/`). With `pythonpath = ["src"]`, you can import as `import demo.main`.
+- `tests/`: Pytest suite (e.g., `tests/test_main.py`, `tests/test_demo.py`).
+- Config: `pyproject.toml` (poethepoet tasks), `ruff.toml` (lint/format), `mypy.ini` (type checking), `.pre-commit-config.yaml` (hooks), `uv.lock` (locked deps).
 
 ## Build, Test, and Development Commands
-Use `uv` for env + execution; tasks are defined in `pyproject.toml`.
-- Install deps: `uv sync`
-- Run app: `uv run poe run` (alias for `python src/main.py`)
-- Test: `uv run poe test`
-- Test w/ coverage: `uv run poe test-cov`
-- Lint: `uv run poe lint`
-- Format: `uv run poe format`
-- Type check: `uv run poe type-check`
-- All checks: `uv run poe all-checks`
-- Pre-commit (manual): `uv run poe pre-commit` | Install hook: `uv run pre-commit install`
+- Install deps: `uv sync`.
+- Run app: `uv run poe run` (alias for `python src/main.py`).
+- Run a module: `uv run python src/demo/main.py`.
+- Test: `uv run poe test` | Coverage: `uv run poe test-cov`.
+- Lint/Format: `uv run poe lint` / `uv run poe format`.
+- Type check: `uv run poe type-check`.
+- All checks: `uv run poe all-checks`.
+- Pre-commit: `uv run pre-commit install` then `uv run poe pre-commit`.
 
 ## Coding Style & Naming Conventions
-- Formatting/Linting: Managed by Ruff; run formatter before committing.
-- Line length: 100; quotes: double; indent: spaces (see `ruff.toml`).
-- Python: target `py313`; add type hints—`mypy` runs in `strict` mode.
-- Imports: isort via Ruff; first‑party is `src`.
-- Naming: modules `snake_case.py`; functions/vars `snake_case`; classes `PascalCase`.
+- Python 3.13; type hints required (`mypy` strict mode).
+- Ruff handles lint + format; run formatter before committing.
+- Line length 100; double quotes; spaces for indent.
+- Imports sorted by Ruff (isort); first‑party is `src`.
+- Naming: modules/files `snake_case.py`; functions/vars `snake_case`; classes `PascalCase`.
 
 ## Testing Guidelines
-- Framework: `pytest` with optional coverage (`--cov=src`).
-- Location/name: place tests under `tests/` as `test_*.py`; functions `test_*`.
-- Assertions: allowed in tests (see per-file ignore `S101`).
-- Run locally: `uv run poe test` or `uv run pytest tests/`.
+- Framework: `pytest`; coverage via `--cov=src`.
+- Place tests in `tests/` as `test_*.py` with functions `test_*`.
+- Assertions allowed (tests ignore `S101`).
+- Run: `uv run poe test` or `uv run pytest tests/`.
 
 ## Commit & Pull Request Guidelines
-- Commit style: Prefer Conventional Commits (e.g., `feat:`, `fix:`, `chore:`). Use imperative mood, short subject (<72 chars), and a clear body when needed.
+- Commits: Conventional Commits (e.g., `feat:`, `fix:`, `chore:`). Keep subjects <72 chars, imperative mood.
 - Before pushing: run `uv run poe all-checks` and ensure tests pass.
-- PRs: include purpose, summary of changes, any screenshots/logs when relevant, and link related issues (e.g., `Closes #123`). Request at least one review.
+- PRs: include purpose, summary of changes, output/logs if helpful, and link issues (e.g., `Closes #123`). Request at least one review.
 
 ## Security & Configuration Tips
-- Requirements: Python >= 3.13 and `uv` (`pip install uv`).
-- Do not commit secrets or large data; respect `.gitignore`.
-- Keep dependencies minimal; use `uv add <pkg>` / `uv remove <pkg>` and commit `pyproject.toml` + `uv.lock`.
+- Requirements: Python >=3.13 and `uv` (`pip install uv`).
+- Don’t commit secrets or large data; follow `.gitignore`.
+- Manage deps with `uv add <pkg>` / `uv remove <pkg>`; commit `pyproject.toml` and `uv.lock`.
