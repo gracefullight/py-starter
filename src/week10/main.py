@@ -18,7 +18,7 @@ def say_hello(name: str = "world") -> str:
 def main() -> None:
     """Small CLI entry to demonstrate usage."""
     # Ignore T20 rule (print statement prohibition)
-    print(say_hello("demo"))  # noqa: T201
+    print(say_hello("week10"))  # noqa: T201
 
 
 if __name__ == "__main__":
