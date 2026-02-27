@@ -16,6 +16,11 @@
 - All checks: `uv run poe all-checks`.
 - Pre-commit: `uv run pre-commit install`, then `uv run poe pre-commit`.
 
+## Agent Quality Gate
+- After implementing or modifying functionality, follow `.agent/rules/python-quality-gate.md`.
+- Required minimum checks before reporting completion: `uv run poe lint` and `uv run poe type-check`.
+- If either check fails, do not mark work complete; fix introduced issues first and clearly report unrelated pre-existing failures.
+
 ## Coding Style & Naming Conventions
 - Python 3.12 (>=3.12,<3.13); strict type hints enforced by `mypy`.
 - Ruff manages linting and formatting; line length 100, double quotes, spaces for indent.
